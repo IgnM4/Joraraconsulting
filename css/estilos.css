@@ -749,6 +749,37 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
   font-size: 1.01em;
 }
 
+/* Diseño mejorado para la tarjeta de presentación */
+#acerca .equipo {
+  justify-content: center;
+}
+#acerca .about-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  max-width: 680px;
+}
+#acerca .about-card img {
+  height: 120px;
+  width: 120px;
+}
+#acerca .about-text {
+  max-width: none;
+}
+#acerca .about-text p {
+  margin-top: 0.8em;
+}
+@media (max-width: 700px) {
+  #acerca .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  #acerca .about-text {
+    text-align: center;
+  }
+}
+
 /* Título mejorado para secciones personales */
 #acerca .section-title {
   color: var(--color-principal);
