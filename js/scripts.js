@@ -112,6 +112,32 @@ document.addEventListener('DOMContentLoaded', () => {
     startHeroSlider();
   }
 
+  // --- Cargar publicaciones de LinkedIn ---
+  const feedContainer = document.getElementById('linkedin-feed');
+  if (feedContainer) {
+    fetch('/api/linkedin')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.posts || !data.posts.length) {
+          feedContainer.innerHTML = '<p>No hay publicaciones disponibles.</p>';
+          return;
+        }
+        data.posts.forEach(post => {
+          const article = document.createElement('article');
+          article.className = 'card';
+          article.innerHTML = `
+            <h4>${post.title}</h4>
+            <span class="blog-fecha">${post.date}</span>
+            <p>${post.summary}</p>
+          `;
+          feedContainer.appendChild(article);
+        });
+      })
+      .catch(() => {
+        feedContainer.innerHTML = '<p>No se pudo cargar el feed de LinkedIn.</p>';
+      });
+  }
+
   // --- Formulario de contacto (validación y AJAX) ---
   const form = document.getElementById('form-contacto');
   const status = document.getElementById('form-status');
