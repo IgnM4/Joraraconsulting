@@ -913,14 +913,8 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
   .equipo .ventaja, #blog .card { max-width: 96vw; }
 }
 body {
-  /* Imagen de fondo difuminada */
-  background: 
-    linear-gradient(
-      to bottom, 
-      rgba(255,255,255,0.80), 
-      rgba(255,255,255,0.80) 80%
-    ),
-    url('../img/fondobody.png') center/cover no-repeat fixed;
+  /* Imagen de fondo sin capa opaca */
+  background: url('../img/fondobody.png') center/cover no-repeat fixed;
   color: var(--color-texto);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   min-height: 100vh;
@@ -928,13 +922,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(24,25,26,0.80),
-        rgba(24,25,26,0.80) 80%
-      ),
-      url('../img/fondobody.png') center/cover no-repeat fixed;
+    background: url('../img/fondobody.png') center/cover no-repeat fixed;
     color: var(--color-texto);
   }
 }
