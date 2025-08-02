@@ -400,6 +400,25 @@ header {
   }
 }
 
+@media (max-width: 400px) {
+  .resaltado-hero-title,
+  .resaltado-hero-sub,
+  .resaltado-hero {
+    display: block;
+    width: 100%;
+  }
+  .resaltado-hero-title {
+    font-size: 1.6rem;
+  }
+  .resaltado-hero-sub {
+    font-size: 0.95rem;
+  }
+  .resaltado-hero {
+    font-size: 0.9rem;
+    padding: 0.6em 0.9em;
+  }
+}
+
 /* SERVICIOS */
 .servicios {
   background: var(--blanco);
