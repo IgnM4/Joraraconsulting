@@ -93,14 +93,14 @@ button, .btn-principal {
 
 /* Header y Navbar */
 header {
-  background: var(--blanco);
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 @media (prefers-color-scheme: dark) {
-  header { background: #18191a; }
+  header { background: rgba(24, 25, 26, 0.7); }
 }
 .navbar {
   display: flex;
