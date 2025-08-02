@@ -44,6 +44,16 @@ body {
   min-height: 100vh;
 }
 
+/* Sombreado sutil color cereza para todos los títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 0 1px 3px rgba(185, 23, 50, 0.3);
+}
+
 /* Enlaces y botones */
 a {
   color: var(--color-principal);
@@ -913,6 +923,21 @@ body {
   color: var(--color-texto);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  scrollbar-color: var(--color-principal) rgba(0, 0, 0, 0.5);
+}
+
+/* Barra de desplazamiento con fondo 50% transparente */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-principal);
+  border-radius: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
