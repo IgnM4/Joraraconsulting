@@ -737,6 +737,24 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
   padding: 2.5rem 2vw;
   background: var(--color-bg);
 }
+
+/* Globo estilo romboide para secciones */
+.globo-seccion {
+  background: rgba(255,255,255,0.5);
+  padding: 2rem 1.5rem;
+  border-radius: 1em;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .globo-seccion {
+    background: rgba(79,47,47,0.5);
+  }
+}
 #investigacion p, #acerca p { margin-bottom: 1.2rem; }
 
 #investigacion .lista-innovacion {
