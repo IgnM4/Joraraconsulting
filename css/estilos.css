@@ -71,6 +71,10 @@ button, .btn-principal {
   letter-spacing: .01em;
   transition: background .23s, color .2s, box-shadow .18s;
 }
+.hero .btn-principal {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 .btn-principal:hover {
   background: var(--color-acento);
   color: var(--color-bg);
@@ -321,6 +325,8 @@ header {
   color: var(--color-texto, #b91732);
   padding: 0.7em 1.5em;
   border-radius: 1em;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   font-weight: 500;
   margin-bottom: 1.2em;
@@ -334,6 +340,8 @@ header {
   color: var(--color-principal, #b91732);
   padding: 0.17em 0.9em 0.18em 0.9em;
   border-radius: 1.2em;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
   box-shadow: 0 4px 24px rgba(21, 9, 9, 0.07);
   font-weight: 700;
   margin-bottom: 0.3em;
@@ -348,6 +356,8 @@ header {
   color: var(--verde-oscuro, #189945);
   padding: 0.13em 1em 0.13em 1em;
   border-radius: 1.2em;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   font-weight: 600;
   margin-bottom: 1.1em;
