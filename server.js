@@ -3,7 +3,6 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.get('/api/linkedin', async (req, res) => {
   try {
@@ -35,8 +34,13 @@ app.get('/api/linkedin', async (req, res) => {
   }
 });
 
-app.use(express.static('.'));
+app.use(express.static('public'));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
