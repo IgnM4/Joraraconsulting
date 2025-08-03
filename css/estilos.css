@@ -6,6 +6,7 @@
   --gris-fondo: #f6f6f6;
   --blanco: #fff;
   --negro: #18191a;
+  --vidrio-olivo: rgba(107,142,35,0.4);
 
   --color-principal: var(--rojo-cereza);
   --color-acento: var(--dorado);
@@ -21,6 +22,7 @@
     --color-principal: #b91732;
     --color-acento: #d4af37;
     --verde-oscuro: #05642c;
+    --vidrio-olivo: rgba(107,142,35,0.4);
     --shadow: 0 2px 16px rgba(0,0,0,0.35);
   }
 }
@@ -42,6 +44,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+section {
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
 }
 
 /* Sombreado sutil color cereza para todos los títulos */
@@ -87,20 +94,18 @@ button, .btn-principal {
 }
 .btn-principal:hover {
   background: var(--color-acento);
-  color: var(--color-bg);
+  color: var(--blanco);
   box-shadow: 0 8px 30px rgba(180,23,50,0.13);
 }
 
 /* Header y Navbar */
 header {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 100;
-}
-@media (prefers-color-scheme: dark) {
-  header { background: rgba(24, 25, 26, 0.7); }
 }
 .navbar {
   display: flex;
@@ -150,7 +155,8 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     position: absolute;
-    background: var(--blanco);
+    background: var(--vidrio-olivo);
+    backdrop-filter: blur(6px);
     right: 2vw;
     top: 68px;
     min-width: 160px;
@@ -159,9 +165,6 @@ header {
     padding: 1.6em 1em;
     display: none;
     z-index: 999;
-  }
-  @media (prefers-color-scheme: dark) {
-    .nav-links { background: #232527; }
   }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block;}
@@ -331,7 +334,8 @@ header {
 }
 .resaltado-hero {
   display: inline-block;
-  background: rgba(255,255,255,0.85);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   color: var(--color-texto, #b91732);
   padding: 0.7em 1.5em;
   border-radius: 1em;
@@ -348,7 +352,8 @@ header {
 }
 .resaltado-hero-title {
   display: inline-block;
-  background: rgba(255,255,255,0.85);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   color: var(--color-principal, #b91732);
   padding: 0.17em 0.9em 0.18em 0.9em;
   border-radius: 1.2em;
@@ -366,7 +371,8 @@ header {
 
 .resaltado-hero-sub {
   display: inline-block;
-  background: rgba(255,255,255,0.85);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   color: var(--verde-oscuro, #189945);
   padding: 0.13em 1em 0.13em 1em;
   border-radius: 1.2em;
@@ -382,15 +388,7 @@ header {
   max-width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  .resaltado-hero-title,
-  .resaltado-hero-sub,
-  .resaltado-hero {
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-  }
-}
+
 
 @media (max-width: 480px) {
   .resaltado-hero-title {
@@ -426,12 +424,10 @@ header {
 
 /* SERVICIOS */
 .servicios {
-  background: var(--blanco);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   padding: 2.5rem 0 2.5rem 0;
   text-align: center;
-}
-@media (prefers-color-scheme: dark) {
-  .servicios { background: #18191a; }
 }
 .section-title {
   font-size: 2rem;
@@ -446,7 +442,8 @@ header {
   flex-wrap: wrap;
 }
 .card {
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   border-radius: 20px;
   box-shadow: var(--shadow);
   padding: 2.5rem 1.5rem 2rem 1.5rem;
@@ -484,7 +481,8 @@ header {
 /* Ventajas */
 .porqueelegir {
   padding: 2rem 2vw;
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   text-align: center; /* Centra el título SIEMPRE */
 }
 .section-title {
@@ -510,7 +508,8 @@ header {
 }
 
 .ventaja {
-  background: var(--blanco);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   border-radius: 14px;
   padding: 1.3rem 1.5rem;
   text-align: center;
@@ -524,13 +523,11 @@ header {
 }
 .ventaja img { height: 44px; margin-bottom: .5em; }
 .ventaja span { font-weight: 600; font-size: 1.08rem; }
-@media (prefers-color-scheme: dark) {
-  .ventaja { background: #232527; border: 1px solid #282828; }
-}
 
 /* Testimonios */
 .testimonios {
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   padding: 2.5rem 2vw 2.5rem 2vw;
   text-align: center;
 }
@@ -542,7 +539,8 @@ header {
 .slide {
   display: none;
   padding: 2rem 1rem 1rem 1rem;
-  background: var(--blanco);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   border-radius: 18px;
   box-shadow: var(--shadow);
   font-size: 1.15rem;
@@ -603,17 +601,16 @@ blockquote {
 
 /* -------- FORMULARIO DE CONTACTO -------- */
 .contacto {
-  background: var(--blanco);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   padding: 2.2rem 0 2rem 0;
   text-align: center;
-}
-@media (prefers-color-scheme: dark) {
-  .contacto { background: #18191a; }
 }
 .form-contacto {
   max-width: 420px;
   margin: 0 auto;
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   border-radius: 18px;
   box-shadow: var(--shadow);
   padding: 2rem 1.2rem 1.2rem 1.2rem;
@@ -639,7 +636,8 @@ blockquote {
   border-radius: 7px;
   font-size: 1rem;
   margin-bottom: .2em;
-  background: #fff;
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   transition: border .15s;
   resize: vertical;
 }
@@ -663,7 +661,8 @@ blockquote {
 
 /* FOOTER */
 footer {
-  background: #232527;
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   color: #fafafa;
   padding: 2.2rem 2vw 0.7rem 2vw;
   margin-top: 2.5rem;
@@ -733,19 +732,22 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
 /* --- NUEVO CONTENIDO: BLOG / ACERCA / INVESTIGACION / BOTON SECUNDARIO --- */
 #investigacion,
 #acerca {
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   padding: 2.5rem 2vw 2.5rem 2vw;
   text-align: center;
 }
 #blog {
   text-align: center;
   padding: 2.5rem 2vw;
-  background: var(--color-bg);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
 }
 
 /* Globo estilo romboide para secciones */
 .globo-seccion {
-  background: rgba(255,255,255,0.5);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   padding: 2rem 1.5rem;
   border-radius: 1em;
   border-top-right-radius: 0;
@@ -753,12 +755,6 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   max-width: 900px;
   margin: 0 auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  .globo-seccion {
-    background: rgba(79,47,47,0.5);
-  }
 }
 #investigacion p, #acerca p { margin-bottom: 1.2rem; }
 
@@ -799,7 +795,8 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
 .equipo .ventaja {
   max-width: 440px;
   margin: 0 auto;
-  background: var(--blanco);
+  background: var(--vidrio-olivo);
+  backdrop-filter: blur(6px);
   box-shadow: 0 4px 30px rgba(24,24,24,0.04);
   border: 1px solid #f3f3f3;
   padding: 2.1em 1.4em 2em 1.4em;
@@ -881,23 +878,11 @@ footer img { height: 28px; margin-right: .4em; vertical-align: middle;}
 
 /* Mejora contraste en modo oscuro */
 @media (prefers-color-scheme: dark) {
-  .equipo .ventaja {
-    background: #232527;
-    border: 1px solid #363636;
-    box-shadow: 0 4px 28px rgba(0,0,0,0.21);
-  }
   .equipo .about-text {
     color: #f3f3f3;
   }
   .equipo .about-text span {
     color: #fa4a72; /* Un cereza más vivo para destacar en fondo oscuro */
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .equipo .ventaja {
-    background: #232527;
-    border: 1px solid #272727;
   }
 }
 
