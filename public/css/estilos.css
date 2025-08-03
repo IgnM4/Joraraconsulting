@@ -625,6 +625,25 @@ blockquote {
   border: 0;
 }
 
+/* LinkedIn carousel */
+.linkedin-slider {
+  max-width: 504px;
+  margin: 0 auto;
+  position: relative;
+}
+.linkedin-slide {
+  display: none;
+}
+.linkedin-slide.active {
+  display: block;
+}
+.linkedin-slide iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
 /* CTA */
 .cta-banner {
   background: var(--color-principal);
