@@ -8,6 +8,8 @@
   --negro: #18191a;
   --vidrio-olivo: rgba(107,142,35,0.4);
 
+  --menu-bg: rgba(255,255,255,0.8);
+
   --color-principal: var(--rojo-cereza);
   --color-acento: var(--dorado);
   --color-bg: var(--gris-fondo);
@@ -23,6 +25,7 @@
     --color-acento: #d4af37;
     --verde-oscuro: #05642c;
     --vidrio-olivo: rgba(107,142,35,0.4);
+    --menu-bg: rgba(24,25,26,0.8);
     --shadow: 0 2px 16px rgba(0,0,0,0.35);
   }
 }
@@ -155,7 +158,9 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     position: absolute;
-    background: var(--vidrio-olivo);
+    background:
+      linear-gradient(var(--vidrio-olivo), var(--vidrio-olivo)),
+      var(--menu-bg);
     backdrop-filter: blur(6px);
     right: 2vw;
     top: 68px;
