@@ -138,30 +138,27 @@ document.addEventListener('DOMContentLoaded', () => {
     startHeroSlider();
   }
 
-  // --- Cargar publicaciones de LinkedIn ---
-  const feedContainer = document.getElementById('linkedin-feed');
-  if (feedContainer) {
-    fetch('/api/linkedin')
-      .then(res => res.json())
-      .then(data => {
-        if (!data.posts || !data.posts.length) {
-          feedContainer.innerHTML = '<p>No hay publicaciones disponibles.</p>';
-          return;
-        }
-        data.posts.forEach(post => {
-          const article = document.createElement('article');
-          article.className = 'card';
-          article.innerHTML = `
-            <h4>${post.title}</h4>
-            <span class="blog-fecha">${post.date}</span>
-            <p>${post.summary}</p>
-          `;
-          feedContainer.appendChild(article);
-        });
-      })
-      .catch(() => {
-        feedContainer.innerHTML = '<p>No se pudo cargar el feed de LinkedIn.</p>';
+  // --- Carrusel de LinkedIn ---
+  const linkedinSlider = document.getElementById('linkedin-slider');
+  if (linkedinSlider) {
+    const linkedinSlides = linkedinSlider.querySelectorAll('.linkedin-slide');
+    let linkedinIdx = 0;
+    const linkedinNext = document.getElementById('linkedin-next');
+    const linkedinPrev = document.getElementById('linkedin-prev');
+    function showLinkedin(idx) {
+      linkedinSlides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+    }
+    if (linkedinSlides.length && linkedinNext && linkedinPrev) {
+      linkedinNext.addEventListener('click', () => {
+        linkedinIdx = (linkedinIdx + 1) % linkedinSlides.length;
+        showLinkedin(linkedinIdx);
       });
+      linkedinPrev.addEventListener('click', () => {
+        linkedinIdx = (linkedinIdx - 1 + linkedinSlides.length) % linkedinSlides.length;
+        showLinkedin(linkedinIdx);
+      });
+      showLinkedin(linkedinIdx);
+    }
   }
 
   // --- Formulario de contacto (validación y AJAX) ---
