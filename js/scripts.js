@@ -41,29 +41,55 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Slider de Testimonios (con teclado accesible) ---
-  const slides = document.querySelectorAll('.slide');
-  let slideIdx = 0;
-  const nextBtn = document.getElementById('next');
-  const prevBtn = document.getElementById('prev');
-  function showSlide(idx) {
-    slides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+  const testimonialSlider = document.getElementById('slider');
+  if (testimonialSlider) {
+    const slides = testimonialSlider.querySelectorAll('.slide');
+    let slideIdx = 0;
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    function showSlide(idx) {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+    }
+    if (slides.length && nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', () => {
+        slideIdx = (slideIdx + 1) % slides.length;
+        showSlide(slideIdx);
+      });
+      prevBtn.addEventListener('click', () => {
+        slideIdx = (slideIdx - 1 + slides.length) % slides.length;
+        showSlide(slideIdx);
+      });
+      document.addEventListener('keydown', e => {
+        if (document.activeElement.tagName === 'BODY') {
+          if (e.key === 'ArrowRight') nextBtn.click();
+          if (e.key === 'ArrowLeft') prevBtn.click();
+        }
+      });
+      showSlide(slideIdx);
+    }
   }
-  if (slides.length && nextBtn && prevBtn) {
-    nextBtn.addEventListener('click', () => {
-      slideIdx = (slideIdx + 1) % slides.length;
-      showSlide(slideIdx);
-    });
-    prevBtn.addEventListener('click', () => {
-      slideIdx = (slideIdx - 1 + slides.length) % slides.length;
-      showSlide(slideIdx);
-    });
-    document.addEventListener('keydown', e => {
-      if (document.activeElement.tagName === 'BODY') {
-        if (e.key === 'ArrowRight') nextBtn.click();
-        if (e.key === 'ArrowLeft') prevBtn.click();
-      }
-    });
-    showSlide(slideIdx);
+
+  // --- Slider de videos ---
+  const videoSlider = document.getElementById('video-slider');
+  if (videoSlider) {
+    const videoSlides = videoSlider.querySelectorAll('.video-slide');
+    let videoIdx = 0;
+    const videoNext = document.getElementById('video-next');
+    const videoPrev = document.getElementById('video-prev');
+    function showVideo(idx) {
+      videoSlides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+    }
+    if (videoSlides.length && videoNext && videoPrev) {
+      videoNext.addEventListener('click', () => {
+        videoIdx = (videoIdx + 1) % videoSlides.length;
+        showVideo(videoIdx);
+      });
+      videoPrev.addEventListener('click', () => {
+        videoIdx = (videoIdx - 1 + videoSlides.length) % videoSlides.length;
+        showVideo(videoIdx);
+      });
+      showVideo(videoIdx);
+    }
   }
 
   // --- Animación fade-in inicial en cards (sólo si están visibles) ---
